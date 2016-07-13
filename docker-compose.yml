@@ -1,23 +1,30 @@
 version: '2'
 services:
   lounge:
-    image: thelounge/lounge:latest
+    image: hashbang/chat
     container_name: lounge
     ports:
       - "9000:9000"
-    environment:
-      VIRTUAL_HOST: 'chat.hashbang.sh'
+    expose:
+      - "9000/tcp"
     volumes:
-      - ~/.lounge:/home/lounge/data
+      - /home/lounge/data
     restart: always  
-  le-proxy:
-    image: eforce21/letsencrypt-nginx-proxy:1.0.2
-    container_name: le-proxy
+  proxy:
+    #image: eforce21/letsencrypt-nginx-proxy:1.0.2
+    #image: jwilder/nginx-proxy
+    image: steveltn/https-portal
+    container_name: proxy
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/tmp/docker.sock:ro"
-    environment:
-      - LETSENCRYPT_EMAIL=team@hashbang.sh
     restart: always  
+    depends_on:
+      - "lounge"
+    links:
+      - "lounge"
+    environment:
+      DOMAINS: 'chat.hashbang.sh -> http://lounge:9000'
+      STAGE: 'production'
