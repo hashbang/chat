@@ -1,0 +1,23 @@
+version: '2'
+services:
+  lounge:
+    image: thelounge/lounge:latest
+    container_name: lounge
+    ports:
+      - "9000:9000"
+    environment:
+      VIRTUAL_HOST: 'chat.hashbang.sh'
+    volumes:
+      - ~/.lounge:/home/lounge/data
+    restart: always  
+  le-proxy:
+    image: eforce21/letsencrypt-nginx-proxy:1.0.2
+    container_name: le-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+    environment:
+      - LETSENCRYPT_EMAIL=team@hashbang.sh
+    restart: always  
