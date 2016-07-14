@@ -1,22 +1,4 @@
-/*
-Zenburn theme for The Lounge.
-Based on the Morning Theme by Riku Rouvila
-
-Installation instructions can be found here
-https://thelounge.github.io/docs/server/configuration.html#theme
-
-Author: JP Smith
-GitHub: https://github.com/japesinator
-*/
-
-/*
-BACKGROUND #3f3f3f
-INPUT BACKGROUND #434443
-PRIMARY #dcdccc
-SECONDARY #d2d39b
-BORDERS #333333
-QUIT #bc6c4c
-*/
+@import url('http://fonts.googleapis.com/css?family=Montserrat');
 
 body {
 	background: #2b2b2b;
@@ -24,10 +6,23 @@ body {
 }
 
 #main,
-#chat .sidebar,
 #windows .chan,
 #windows .window {
-	background: #3f3f3f;
+	background: #111;
+}
+#chat .sidebar {
+	background: #222;
+}
+
+
+#main .btn {
+	background: #666;
+	color:#999;
+	border-color:#444;
+}
+
+#sidebar .chan:first-child {
+	color:#999;
 }
 
 #main #chat,
@@ -42,7 +37,7 @@ body {
 #settings,
 #sign-in,
 #connect .title {
-	color: #88b090;
+	color: #666;
 }
 
 #settings,
@@ -52,7 +47,7 @@ body {
 }
 
 #sidebar {
-	background: #2b2b2b;
+	background: #222;
 	bottom: 48px;
 }
 
@@ -60,8 +55,28 @@ body {
 	background: linear-gradient(to right, rgba(43, 43, 43, 0) 0%, rgba(43, 43, 43, 1) 100%);
 }
 
+#sidebar .networks {
+	margin-top:150px;
+}
+
+#sidebar:after {
+	font-family: 'Montserrat', cursive;
+	font-weight:bold;
+	position:absolute;
+	top:0;
+	left:0;
+	width:220px;
+	height:150px;
+	font-size:150px;
+	font-height:150px;
+	text-align:center;
+	display:block;
+	color:#888;
+	content:"#!";
+}
+
 #footer {
-	background: #33332f;
+	background: #222;
 	border-top: 1px solid #000;
 }
 
@@ -168,7 +183,7 @@ body {
 
 /* Message form */
 #form {
-	background: #333;
+	background: #222;
 	border-color: #101010;
 }
 
