@@ -9,8 +9,6 @@ services:
       - "9000/tcp"
     restart: always  
   proxy:
-    #image: eforce21/letsencrypt-nginx-proxy:1.0.2
-    #image: jwilder/nginx-proxy
     image: steveltn/https-portal
     container_name: proxy
     ports:
@@ -26,3 +24,4 @@ services:
     environment:
       DOMAINS: 'chat.hashbang.sh -> http://lounge:9000'
       STAGE: 'production'
+      WEBSOCKET: 'true'
