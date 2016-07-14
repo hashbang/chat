@@ -35,6 +35,7 @@ EXPOSE ${PORT}
 
 ADD config.js /home/lounge/data/
 ADD hashbang.css /home/lounge/src/client/themes/
+ADD favicon.png /home/lounge/src/client/img/favicon-notification.png
 
 # Don't use an entrypoint here. It makes debugging difficult.
 CMD node index.js --home "$LOUNGE_DATA"
