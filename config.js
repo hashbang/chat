@@ -23,7 +23,7 @@ module.exports = {
 		nick: "somenick",
 		username: "your-username",
 		realname: "Your Real Name",
-		join: "#!"
+		join: "#!,#!social,#!spam"
 	},
 	transports: ["polling", "websocket"],
 	identd: {
