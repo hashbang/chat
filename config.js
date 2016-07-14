@@ -3,12 +3,14 @@ module.exports = {
 	host: "0.0.0.0",
 	port: 9000,
 	bind: undefined,
+	reverseProxy: true,
 	theme: "themes/hashbang.css",
 	autoload: true,
 	prefetch: true,
 	prefetchMaxImageSize: 512,
-	displayNetwork: false,
+	displayNetwork: true,
 	lockNetwork: true,
+	webirc: null,
 	logs: {
 		format: "YYYY-MM-DD HH:mm:ss",
 		timezone: "UTC+00:00"
@@ -23,12 +25,18 @@ module.exports = {
 		nick: "somenick",
 		username: "your-username",
 		realname: "Your Real Name",
-		join: "#!,#!social,#!spam"
+		join: "#!",
+		auto: true
 	},
 	transports: ["polling", "websocket"],
+	https: {
+		enable: false,
+		key: "",
+		certificate: ""
+	},
 	identd: {
 		enable: false,
 		port: 113
-	}
+	},
+	oidentd: null,
 };
-

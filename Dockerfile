@@ -1,6 +1,6 @@
 FROM node:4
 
-ENV LOUNGE_VERSION 1.5.0
+ENV LOUNGE_VERSION 2.0.0-pre.4
 ENV NODE_ENV production
 
 ARG user=lounge
@@ -36,6 +36,7 @@ EXPOSE ${PORT}
 ADD config.js /home/lounge/data/
 ADD hashbang.css /home/lounge/src/client/themes/
 ADD favicon.png /home/lounge/src/client/img/favicon-notification.png
+ADD favicon.png /home/lounge/src/client/img/favicon.png
 
 # Don't use an entrypoint here. It makes debugging difficult.
 CMD node index.js --home "$LOUNGE_DATA"
