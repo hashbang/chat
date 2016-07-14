@@ -7,8 +7,6 @@ services:
       - "9000:9000"
     expose:
       - "9000/tcp"
-    volumes:
-      - /home/lounge/data
     restart: always  
   proxy:
     #image: eforce21/letsencrypt-nginx-proxy:1.0.2
