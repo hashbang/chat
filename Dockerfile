@@ -34,6 +34,7 @@ ENV PORT 9000
 EXPOSE ${PORT}
 
 ADD config.js /home/lounge/data/
+ADD hashbang.css /home/lounge/src/client/themes/
 
 # Don't use an entrypoint here. It makes debugging difficult.
 CMD node index.js --home "$LOUNGE_DATA"

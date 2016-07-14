@@ -3,7 +3,7 @@ module.exports = {
 	host: "0.0.0.0",
 	port: 9000,
 	bind: undefined,
-	theme: "themes/example.css",
+	theme: "themes/hashbang.css",
 	autoload: true,
 	prefetch: true,
 	prefetchMaxImageSize: 512,

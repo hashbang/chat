@@ -2,6 +2,9 @@ version: '2'
 services:
   lounge:
     build: ./
+    volumes:
+      - "./hashbang.css:/home/lounge/src/client/themes/hashbang.css" 
+      - "./config.js:/home/lounge/data/config.js" 
   proxy:
     ports:
       - "8000:80"
