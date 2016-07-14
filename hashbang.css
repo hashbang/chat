@@ -27,7 +27,7 @@ body {
 
 #main #chat,
 #main #form,
-#form .input,
+#form #input,
 #chat,
 #windows .header {
 	font-family: "Open Sans", sans-serif !important;
@@ -187,7 +187,7 @@ body {
 	border-color: #101010;
 }
 
-#form .input {
+#form #input {
 	background-color: #434443 !important;
 	border-color: #101010 !important;
 	color: #dcdccc !important;
